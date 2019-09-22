@@ -1,5 +1,5 @@
 import params
-from random import seed, random, randint
+from random import seed, random, randint, uniform
 
 #seed(1)
 
@@ -46,7 +46,7 @@ def Q_learning(next_state, profit):
         #rand = False
         
     
-    if (random() <= params.epsilon):
+    if (uniform(0, 0.3) <= params.epsilon):
         params.rand = True
     else:
         params.rand = False
