@@ -1,12 +1,30 @@
 import pprint
-import numpy as np
 
+global state_size
+global action_size
+global alpha
+global gamma
+global epsilon
+global rand
+global Q_table
+global current_state
+global action
+global epsilon_min
+global epsilon_decay
+global alpha_min
+global alpha_decay
 
-state_size = 12
-action_size = 7
-alpha = 0.55
-gamma = 0.6
-epsilon = 0.2
+state_size = 1
+action_size = 1000
+alpha = 0.98
+gamma = 0.8
+epsilon = 0.3
+epsilon_min = 0.01
+alpha_min = 0.001
+epsilon_decay = 0.995
+alpha_decay = 0.99
+
+rand = False
 
 #current_states = np.zeros(hour)
 #actions = np.ones(hour)
