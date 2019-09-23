@@ -1,5 +1,7 @@
 import params
-from random import seed, random, randint, uniform
+import xlwt
+from xlwt import Workbook
+from random import seed, random, randint
 
 #seed(1)
 
@@ -46,7 +48,7 @@ def Q_learning(next_state, profit):
         #rand = False
         
     
-    if (uniform(0, 0.3) <= params.epsilon):
+    if (random() <= params.epsilon):
         params.rand = True
     else:
         params.rand = False
@@ -79,3 +81,14 @@ def getQtable():
     #print(params.Q_table,"\n")
 
     return params.Q_table
+
+def output_table(hour):
+    
+    wb = Workbook()
+    sheet1 = wb.add_sheet('Sheet 1')
+    
+    for i in range(params.state_size):
+        for j in range(params.action_size):
+            sheet1.write(i+hour+2, j, params.Q_table[i][j])
+            
+    wb.save('Q_table.xlsx')
