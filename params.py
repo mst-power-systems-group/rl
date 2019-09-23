@@ -7,7 +7,7 @@ global alpha
 global gamma
 global epsilon
 global rand
-global Q_table
+#global Q_table
 global current_state
 global action
 global epsilon_min
@@ -19,13 +19,13 @@ global sample_batch_size
 
 state_size = 1
 action_size = 10
-alpha = 0.98
+alpha = 0.5
 gamma = 0.7
 epsilon = 0.2
 epsilon_min = 0.01
-alpha_min = 0.001
+#alpha_min = 0.001
 epsilon_decay = 0.995
-alpha_decay = 0.99
+#alpha_decay = 0.99
 memory = coll.deque(maxlen=3000)
 sample_batch_size = 32
 
@@ -38,10 +38,10 @@ rand = False
 current_state = 0
 action = 1
 
-Q_table = []
+'''Q_table = []
 
 for i in range(state_size):
   row = []
   for j in range(action_size):
     row.append(0.0)
-  Q_table.append(row)
+  Q_table.append(row)'''
