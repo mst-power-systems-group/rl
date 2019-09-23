@@ -15,10 +15,10 @@ global alpha_min
 global alpha_decay
 
 state_size = 1
-action_size = 1000
+action_size = 10
 alpha = 0.98
-gamma = 0.8
-epsilon = 0.3
+gamma = 0.7
+epsilon = 0.2
 epsilon_min = 0.01
 alpha_min = 0.001
 epsilon_decay = 0.995
