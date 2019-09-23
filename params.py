@@ -1,4 +1,5 @@
 import pprint
+import collections as coll
 
 global state_size
 global action_size
@@ -13,6 +14,8 @@ global epsilon_min
 global epsilon_decay
 global alpha_min
 global alpha_decay
+global memory
+global sample_batch_size
 
 state_size = 1
 action_size = 10
@@ -23,6 +26,8 @@ epsilon_min = 0.01
 alpha_min = 0.001
 epsilon_decay = 0.995
 alpha_decay = 0.99
+memory = coll.deque(maxlen=3000)
+sample_batch_size = 32
 
 rand = False
 
