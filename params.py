@@ -1,4 +1,4 @@
-import pprint
+#import pprint
 import collections as coll
 import numpy as np
 
@@ -9,12 +9,12 @@ global gamma
 global epsilon
 #global rand
 #global Q_table
-global current_state
-global action
+#global current_state
+#global action
 global epsilon_min
 global epsilon_decay
-global alpha_min
-global alpha_decay
+#global alpha_min
+#global alpha_decay
 global memory
 global batch_size
 global agent_current_state
