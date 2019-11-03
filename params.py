@@ -14,7 +14,7 @@ global epsilon
 global epsilon_min
 global epsilon_decay
 #global alpha_min
-#global alpha_decay
+global alpha_decay
 global memory
 global batch_size
 global agent_current_state
@@ -22,13 +22,13 @@ global action
 
 state_size = 12
 action_size = 10
-alpha = 0.5
+alpha = 0.99
 gamma = 0.8
-epsilon = 1.0
+epsilon = 0.3
 epsilon_min = 0.01
 #alpha_min = 0.001
-epsilon_decay = 0.995
-#alpha_decay = 0.99
+epsilon_decay = 0.9995
+alpha_decay = 0.99995
 memory = coll.deque(maxlen=3000)
 batch_size = 32
 
@@ -39,6 +39,8 @@ agent_current_state = [0]*state_size
 agent_current_state[0] = 1
 
 agent_current_state = np.array(agent_current_state)
+
+agent_current_state = np.reshape(agent_current_state, [1, state_size])
 
 #rand = False
 
